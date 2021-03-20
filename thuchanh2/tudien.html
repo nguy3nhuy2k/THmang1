@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="1">
+<button id="2" value="click1" onclick="click1()" >Tìm</button>
+<p id="3"></p>
+</body>
+</html>
+<script>
+    let b=document.getElementById("3");
+    function click1(){
+        let abc=document.getElementById('1').value;
+        let tv =["chó","mèo","gà","vịt"];
+        let ta =["dog","cat","chicken","duck"];
+        for (let i = 0; i < ta.length ; i++) {
+            if(abc == ta[i]){
+                b.innerHTML=ta[i] + ':' + tv[i];
+                break;
+            }
+            else {
+                b.innerText = 'Không có';
+            }
+        }
+    }
+
+</script>

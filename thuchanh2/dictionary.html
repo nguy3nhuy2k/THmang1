@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span>Từ tiếng anh</span><input type ="text" id="engWord" />
+<button onclick="addWord()">Thêm từ</button> </br>
+<span>Từ tiếng việt</span><input type ="text" id="vieWord" disabled /> </br>
+<button onclick="findWord()">Tra cứu</button> &#160; &#160;
+
+
+<script>
+    let arr1=['Method', 'Property', 'use'];
+    let arr2=['Phương thức', 'Thuộc tính','Sử dụng'];
+
+    function findWord(){
+        let keyword = document.getElementById('engWord').value;
+        let thongbao = false;
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i]==keyword){
+                document.getElementById('vieWord').value= arr2[i];
+                thongbao=true;
+                break;
+            }
+        }
+        if (thongbao==false){
+            alert ('Từ tìm kiếm không tồn tại');
+        }
+    }
+    function addWord(){
+        let newWord1= prompt('Nhập từ tiếng anh');
+        let newWord2= prompt('Nhập nghĩa tiếng việt');
+        arr1.push(newWord1);
+        arr2.push(newWord2);
+    }
+</script>
+
+</body>
+</html>
